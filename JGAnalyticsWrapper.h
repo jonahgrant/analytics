@@ -15,11 +15,9 @@
 #define SendError(category, error) [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createEventWithCategory:category action:label label:@"error" value:nil] build]];
 
 #define SendPage(page) \
-id tracker = [[GAI sharedInstance] defaultTracker]; \
-[tracker set:kGAIScreenName value:page]; \
-[tracker send:[[GAIDictionaryBuilder createAppView] build]];
+[[[GAI sharedInstance] defaultTracker] set:kGAIScreenName value:page]; \
+[[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createAppView] build]];
 
-#define SendPageFromClass(class) \
-id tracker = [[GAI sharedInstance] defaultTracker]; \
-[tracker set:kGAIScreenName value:NSStringFromClass(class)]; \
-[tracker send:[[GAIDictionaryBuilder createAppView] build]];
+#define SendPageFromClass(id) \
+[[[GAI sharedInstance] defaultTracker] set:kGAIScreenName value:NSStringFromClass([id class])]; \
+[[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createAppView] build]];
