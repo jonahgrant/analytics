@@ -10,9 +10,9 @@
 #import "GAITracker.h"
 #import "GAIDictionaryBuilder.h"
 
-#define SendEvent(category, event) [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createEventWithCategory:category action:action label:@"event" value:nil] build]];
+#define SendEvent(category, event) [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createEventWithCategory:category action:event label:@"event" value:nil] build]];
 
-#define SendError(category, error) [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createEventWithCategory:category action:label label:@"error" value:nil] build]];
+#define SendError(category, error) [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createEventWithCategory:category action:error label:@"error" value:nil] build]];
 
 #define SendPage(page) \
 [[[GAI sharedInstance] defaultTracker] set:kGAIScreenName value:page]; \

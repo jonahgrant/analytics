@@ -22,3 +22,6 @@
 	}];
 }
 ```
+
+### License
+None, because this is eight lines of code.  Do whatever you want with it.
