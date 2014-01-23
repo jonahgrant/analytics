@@ -10,9 +10,9 @@
 #import "GAITracker.h"
 #import "GAIDictionaryBuilder.h"
 
-#define SendEvent(category, action, label) [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createEventWithCategory:category action:action label:label value:nil] build]];
+#define SendEvent(category, event) [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createEventWithCategory:category action:action label:@"event" value:nil] build]];
 
-#define SendError(category, action, label) [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createEventWithCategory:category action:label label:label value:nil] build]];
+#define SendError(category, error) [[[GAI sharedInstance] defaultTracker] send:[[GAIDictionaryBuilder createEventWithCategory:category action:label label:@"error" value:nil] build]];
 
 #define SendPage(page) \
 id tracker = [[GAI sharedInstance] defaultTracker]; \
