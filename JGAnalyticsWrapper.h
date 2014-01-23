@@ -18,3 +18,8 @@
 id tracker = [[GAI sharedInstance] defaultTracker]; \
 [tracker set:kGAIScreenName value:page]; \
 [tracker send:[[GAIDictionaryBuilder createAppView] build]];
+
+#define SendPageFromClass(class) \
+id tracker = [[GAI sharedInstance] defaultTracker]; \
+[tracker set:kGAIScreenName value:NSStringFromClass(class)]; \
+[tracker send:[[GAIDictionaryBuilder createAppView] build]];

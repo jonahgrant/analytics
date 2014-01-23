@@ -4,7 +4,10 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	
-	SendPage(NSStringFromClass[self class]);
+	SendPage(@"home");
+	/*
+	You can also use SendPageFromClass(self) to send a page view for the name of the class
+	*/
 }
 
 - (IBAction *)buttonTapped:(id)sender {
